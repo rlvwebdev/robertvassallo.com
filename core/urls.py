@@ -17,10 +17,13 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('portfolio/', include('lib.artwork.urls')),  # Portfolio routes
+    # path('about/', include('about.views.urls')),  # About routes
+    # path('contact/', include('contact.views.urls')),  # Contact routes
 ]
 
 # Serve media files during development
